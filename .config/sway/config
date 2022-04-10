@@ -25,6 +25,7 @@ set $mod Mod4
 # WALLPAPER CONFIG
 #LAPTOP SCREEN
 output "Unknown 0x0056 0x00000000" bg $HOME/sway-scripts/background/img/Unknown-0x0056-0x00000000.png fill
+output "Unknown 0x463D 0x00000000" bg $HOME/sway-scripts/background/img/Unknown-0x463D-0x00000000.png fill
 # PHILLIPS HOME
 output "Philips Consumer Electronics Company PHL 273V7 0x00000DDD" bg $HOME/sway-scripts/background/img/Unknown-0x0056-0x00000000.png fill
 output "Philips Consumer Electronics Company PHL 273V7 0x00006CA1" bg $HOME/sway-scripts/background/img/Unknown-0x0056-0x00000000.png fill
