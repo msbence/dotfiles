@@ -1,0 +1,56 @@
+{
+    "layer": "bottom",
+    "height": 30,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": [],
+    "modules-right": ["custom/vpn", "network", "pulseaudio", "backlight", "battery", "clock", "custom/weather", "custom/name"],
+    "custom/vpn": {
+        "exec": "$HOME/sway-scripts/get_vpn.sh",
+        "on-click": "$HOME/sway-scripts/set_vpn.sh",
+        "interval": 5,
+        "tooltip": false
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "NETWORK {ipaddr}/{cidr} [WLAN {essid} {signalStrength}%]",
+        "format-ethernet": "NETWORK {ipaddr}/{cidr} [ETH]",
+        "format-disconnected": "",
+        "interval": 10,
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "VOLUME {volume}%",
+        "format-bluetooth": "VOLUME {volume}% [BT]",
+        "format-muted": "VOLUME 0% [MUTED]",
+        "scroll-step": 5,
+        "on-click": "alacritty -e pulsemixer",
+        "tooltip": false
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "BACKLIGHT {percent}%",
+        "on-scroll-up": "brightnessctl set 10%+",
+        "on-scroll-down": "brightnessctl set 10%-",
+        "tooltip": false
+    },
+    "battery": {
+        "format": "BATTERY {capacity}% {time}",
+        "format-charging": "BATTERY {capacity}% [CHG {time}]",
+        "format-full": "BATTERY {capacity}% [FULL]",
+        "tooltip": false
+    },
+    "custom/weather": {
+        "exec": "curl 'https://wttr.in/?format=1' | cut -d ' ' -f 2 | sed s/+//g",
+        "interval": 120
+    },
+    "clock": {
+        "format": "DATETIME {:%Y-%m-%d  %H:%M:%S}",
+        "interval": 1,
+        "tooltip": false
+    },
+    "custom/name": {
+	    "format": "BENCE MADARASZ",
+        "tooltip": false
+    }
+}
+

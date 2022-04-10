@@ -1,0 +1,59 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 30,
+    "modules-left": ["memory", "custom/swap", "cpu", "temperature", "custom/screenlayout", "custom/docker"],
+    "modules-center": [],
+    "modules-right": ["tray"],
+    "custom/waybar-mpris": {
+        "return-type": "json",
+	"format": "MUSIC {}",
+        "exec": "waybar-mpris --position --autofocus --play '>' --pause '||'",
+        "on-click": "waybar-mpris --send toggle",
+        "on-click-right": "waybar-mpris --send player-next",
+        "escape": true,
+        "tooltip": false
+    },
+    "custom/docker": {
+        "exec": "$HOME/sway-scripts/get_docker.sh",
+        "interval": 5,
+        "tooltip": false
+    },
+    "custom/screenlayout": {
+        "exec": "cat $HOME/.current_screenlayout",
+	"format": "{} SCREENLAYOUT",
+        "interval": 5,
+        "tooltip": false
+    },
+    "custom/dgpu": {
+        "exec": "$HOME/sway-scripts/nvidia_gpu.sh",
+        "interval": 5,
+        "tooltip": false
+    },
+    "temperature": {
+        "format": "CORE TEMPERATURE {temperatureC}°C",
+        "critical-threshold": 80,
+        "thermal-zone": 2,
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "CPU {usage}% [{avg_frequency:0.1f}GHz]",
+        "tooltip": false
+    },
+    "custom/swap": {
+        "exec": "$HOME/sway-scripts/get_swap.sh",
+	"interval": 5,
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 5,
+        "format": "MEMORY {percentage}% [{used:0.1f}G/{total:0.1f}G]",
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "tooltip": false
+    }
+}

@@ -1,0 +1,19 @@
+alias cat="bat --paging=never"
+alias ls="colorls"
+alias tree="colorls --tree"
+alias weather="wego"
+alias weatherbp="wego Budapest"
+alias venva="source venv/bin/activate"
+alias tf='terraform'
+alias tg='terragrunt'
+alias awst="python3 $HOME/git/bmadarasz/awstoolkit/awstoolkit"
+alias al="arc land --strategy squash && git checkout master"
+alias ad="pre-commit run && arc diff"
+alias gcal='gcalcli agenda --details location'
+alias gcalw='gcalcli calw'
+alias gcalm='gcalcli calm'
+alias jirac='jira issue create'
+alias jiram='jira issue move'
+alias cd='z'
+alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
